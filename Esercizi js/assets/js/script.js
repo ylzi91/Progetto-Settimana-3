@@ -646,7 +646,26 @@ function tree(num) {
 tree(6);
 
 /* ESERCIZIO 29
-  Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
+  Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero
+    primo.
 */
+
+function isItPrime(num){
+    trovaDivisibile = false;
+    for(let i = 2; i < num; i++){
+        if(num % i === 0){
+            trovaDivisibile = true;
+        }
+    }
+    if(trovaDivisibile){
+        return false;
+    }
+    else {
+        return true;
+    }
+
+}
+
+console.log(isItPrime (3331));
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
