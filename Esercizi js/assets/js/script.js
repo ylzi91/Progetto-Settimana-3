@@ -536,29 +536,29 @@ const tdPage = document.querySelectorAll('td');
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 
-function printConsoleTd(){
-tdPage.forEach((element) => {
-    console.log(element.innerText);
-});
+function printConsoleTd() {
+    tdPage.forEach((element) => {
+        console.log(element.innerText);
+    });
 }
 printConsoleTd();
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
-function addBackground(){
-const aPage = document.querySelectorAll('a');
-aPage.forEach((element) => {
-    element.style.backgroundColor = 'red';
-    element.style.color = 'black';
-});
+function addBackground() {
+    const aPage = document.querySelectorAll('a');
+    aPage.forEach((element) => {
+        element.style.backgroundColor = 'red';
+        element.style.color = 'black';
+    });
 }
 addBackground();
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 
-function addLi(){
+function addLi() {
     const myList = document.getElementById('myList');
     newLi = document.createElement('li');
     newLi.innerText = 'Nuovo Li';
@@ -570,7 +570,7 @@ addLi();
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
-function removeLi(){
+function removeLi() {
     const myList = document.getElementById('myList');
     myList.innerHTML = '';
 }
@@ -580,7 +580,7 @@ removeLi();
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
-function addClassTr(){
+function addClassTr() {
     const allTr = document.querySelectorAll('tr');
     allTr.forEach((element) => {
         element.classList.add('test');
@@ -602,12 +602,13 @@ addClassTr();
   ***
 
 */
-function halfTree(num){
-    string = '';
-    for (let i = 0; i < num; i++){
-        
+function halfTree(num) {
+    string = '*';
+    for (let i = 0; i < num; i++) {
+        console.log(string);
+        string += '*';
     }
-console.log(arratOfArray);
+
 }
 halfTree(3);
 
@@ -619,11 +620,30 @@ halfTree(3);
   Esempio:
   tree(3)
 
-    *
-   ***
-  *****
+  *
+ ***
+*****
 
 */
+
+function tree(num) {
+    let string = '';
+    let f = 1;
+    let numFor = (num - 1) / 2;
+    for (let l = 0; l < (num + 1) / 2; l++){
+    for (let i = 0; i < ((num - f) / 2); i++) {
+        string += ' ';
+    }
+    for(k = 0; k < f; k++){
+         string += '*';
+        
+    }
+    console.log(string);
+    f += 2;
+    string = '';
+    }
+}
+tree(6);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
